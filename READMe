@@ -1,0 +1,14 @@
+ cybernetic-organs-system
+A futuristic company specializing in creating bio-compatible cybernetic organs for human augmentation and replacement. This project will require a deep understanding of object-oriented programming, data structures, and algorithms to simulate the complex interactions between biological and mechanical components.
+
+Main
+Description: The Main class adding the organs to the patient and retrieving organs from the inventory.
+
+CyberneticOrgan class
+Provides method to retrieve organ details and check compatibility with the patient.
+
+Patient class
+stores information about a patient, including their name, age, medical history, and the list of installed cybernetic organs. It allows for adding organs to a patient and retrieving detailed patient information.
+
+OrganInventory class
+A list that holds all the cybernetic organs in the system's inventory.
