@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>CyberneticOrgan.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CyberneticOrgan.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">cyberorgansystem</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">CyberneticOrgan </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String id</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String model</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String functionality</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String compatibility</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">CyberneticOrgan</span><span class="s2">(</span><span class="s1">String id</span><span class="s2">, </span><span class="s1">String model</span><span class="s2">, </span><span class="s1">String functionality</span><span class="s2">, </span><span class="s1">String compatibility</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">id </span><span class="s2">= </span><span class="s1">id</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">model </span><span class="s2">= </span><span class="s1">model</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">functionality </span><span class="s2">= </span><span class="s1">functionality</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">compatibility </span><span class="s2">= </span><span class="s1">compatibility</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getModel</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">model</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getDetails</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s3">&quot;ID: &quot; </span><span class="s2">+ </span><span class="s1">id </span><span class="s2">+ </span><span class="s3">&quot;, Model: &quot; </span><span class="s2">+ </span><span class="s1">model </span><span class="s2">+ </span><span class="s3">&quot;, Functionality: &quot; </span><span class="s2">+ </span><span class="s1">functionality </span><span class="s2">+ </span><span class="s3">&quot;, Compatibility: &quot; </span><span class="s2">+ </span><span class="s1">compatibility</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public boolean </span><span class="s1">isCompatible</span><span class="s2">(</span><span class="s1">String patientCompatibility</span><span class="s2">) {</span>
+
+        <span class="s0">return this</span><span class="s2">.</span><span class="s1">compatibility</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">patientCompatibility</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
