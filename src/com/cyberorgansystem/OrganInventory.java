@@ -4,24 +4,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrganInventory {
-    private List<CyberneticOrgan> inventory;
+    private ArrayList<CyberneticOrgan> organInventory;
 
     public OrganInventory() {
-        this.inventory = new ArrayList<>();
+        this.organInventory = new ArrayList<>();
     }
 
     public void addOrgan(CyberneticOrgan organ) {
-        inventory.add(organ);
-        System.out.println("Organ added to inventory: " + organ.getDetails());
+        organInventory.add(organ);
+        System.out.println("Added " + organ.getModel() + " to inventory.");
     }
 
-    public CyberneticOrgan getOrgan(String model) {
-        for (CyberneticOrgan organ : inventory) {
+    public ArrayList<CyberneticOrgan> getOrganList() {
+        return organInventory;
+    }
+
+    public String removeOrgan(String model) {
+        for (CyberneticOrgan organ : organInventory) {
             if (organ.getModel().equals(model)) {
-                return organ;
+                organInventory.remove(organ);
+                return "Successfully removed " + model + " from inventory.";
             }
         }
-        System.out.println("Organ not found: " + model);
-        return null;
+        return "Organ with model " + model + " not found.";
+    }
+
+    public ArrayList<CyberneticOrgan> searchOrganByFunctionality(String functionality) {
+        ArrayList<CyberneticOrgan> result = new ArrayList<>();
+        for (CyberneticOrgan organ : organInventory) {
+            if (organ.getFunctionality().equals(functionality)) {
+                result.add(organ);
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<CyberneticOrgan> sortOrgansByModel() {
+        organInventory.sort((o1, o2) -> o1.getModel().compareTo(o2.getModel()));
+        return organInventory;
     }
 }
+

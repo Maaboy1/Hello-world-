@@ -6,8 +6,7 @@ public class CyberneticOrgan {
     private String functionality;
     private String compatibility;
 
-    public CyberneticOrgan(String id, String model, String functionality, String compatibility) {
-        this.id = id;
+    public CyberneticOrgan(String model, String functionality, String compatibility) {
         this.model = model;
         this.functionality = functionality;
         this.compatibility = compatibility;
@@ -17,12 +16,16 @@ public class CyberneticOrgan {
         return model;
     }
 
-    public String getDetails() {
-        return "ID: " + id + ", Model: " + model + ", Functionality: " + functionality + ", Compatibility: " + compatibility;
+    public String getFunctionality() {
+        return functionality;
     }
 
-    public boolean isCompatible(String patientCompatibility) {
+    public String getCompatibility() {
+        return compatibility;
+    }
 
-        return this.compatibility.equals(patientCompatibility);
+    @Override
+    public String toString() {
+        return model + ": " + functionality + " (Compatible with " + compatibility + ")";
     }
 }

@@ -5,28 +5,43 @@ import java.util.List;
 
 public class Patient {
     private String name;
-    private int age;
-    private String medicalHistory;
-    private List<CyberneticOrgan> installedOrgans;
+    private CyberneticOrgan[] installedOrgans;
+    private int organCount;
 
-    public Patient(String name, int age, String medicalHistory) {
+    public Patient(String name) {
         this.name = name;
-        this.age = age;
-        this.medicalHistory = medicalHistory;
-        this.installedOrgans = new ArrayList<>();
+        this.installedOrgans = new CyberneticOrgan[5]; // Fixed capacity
+        this.organCount = 0;
     }
 
-    public void addOrgan(CyberneticOrgan organ) {
-        installedOrgans.add(organ);
-        System.out.println("Organ added: " + organ.getDetails());
-    }
-
-    public String getPatientInfo() {
-        StringBuilder info = new StringBuilder("Name: " + name + ", Age: " + age + ", Medical History: " + medicalHistory + "\nInstalled Organs: ");
-        for (CyberneticOrgan organ : installedOrgans) {
-            info.append("\n").append(organ.getDetails());
+    public String addOrgan(CyberneticOrgan organ) {
+        if (organCount < 5) {
+            installedOrgans[organCount] = organ;
+            organCount++;
+            return "Added " + organ.getModel() + " to " + name + "'s installed organs.";
+        } else {
+            return "No space available to add another organ.";
         }
-        return info.toString();
+    }
+
+    public ArrayList<CyberneticOrgan> getOrganList() {
+        ArrayList<CyberneticOrgan> organList = new ArrayList<>();
+        for (int i = 0; i < organCount; i++) {
+            organList.add(installedOrgans[i]);
+        }
+        return organList;
+    }
+
+    public void listOrgans() {
+        if (organCount == 0) {
+            System.out.println(name + " has no installed organs.");
+        } else {
+            System.out.println("Listing installed organs for " + name + ":");
+            for (int i = 0; i < organCount; i++) {
+                System.out.println("- " + installedOrgans[i].getModel() + ": " + installedOrgans[i].getFunctionality());
+            }
+        }
     }
 }
+
 
